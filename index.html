@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description"
+    content="Portfolio of Amr Elshwwam — Flutter Developer specializing in responsive web and mobile design.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="portfolio">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>Amr Elshwwam | Portfolio</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* loader container */
+    #loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #ffffff;
+    }
+
+    .loader {
+      width: 64px;
+      height: 64px;
+      position: relative;
+      background-image:
+        linear-gradient(#2cb7f6 16px, transparent 0),
+        linear-gradient(#02539a 16px, transparent 0),
+        linear-gradient(#02539a 16px, transparent 0),
+        linear-gradient(#2cb7f6 16px, transparent 0);
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+      background-position: left top, left bottom, right top, right bottom;
+      animation: rotate 1s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        width: 64px;
+        height: 64px;
+        transform: rotate(0deg)
+      }
+
+      50% {
+        width: 30px;
+        height: 30px;
+        transform: rotate(180deg)
+      }
+
+      100% {
+        width: 64px;
+        height: 64px;
+        transform: rotate(360deg)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- splash/loading screen -->
+  <div id="loading">
+    <span class="loader"></span>
+  </div>
+
+  <!-- flutter app -->
+  <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    // لما Flutter يجهز، نشيل اللودينج
+    window.addEventListener("flutter-first-frame", function () {
+      var loader = document.getElementById("loading");
+      if (loader) {
+        loader.style.opacity = '0';
+        loader.style.transition = 'opacity 0.5s ease';
+        setTimeout(function () {
+          loader.remove();
+        }, 500);
+      }
+    });
+  </script>
+</body>
+
+</html>
