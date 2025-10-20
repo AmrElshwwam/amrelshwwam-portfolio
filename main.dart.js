@@ -28490,7 +28490,7 @@ l=A.cq(m.h(0,"label"))
 if(l==null)l=""
 k=A.fo(m.h(0,"primaryColor"))
 if(k==null)k=4278190080
-v.G.document.title=l
+// v.G.document.title=l
 A.axX(A.b5(k))
 a.er(a3,B.X.bN([!0]))
 return
